@@ -1,0 +1,89 @@
+/* Container and Section Styles */
+.skills-section {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: #ffffff;
+}
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.skills-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+  color: #ffffff;
+}
+/* Underline highlight under heading */
+.skills-section h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #00ffff;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Grid Layout */
+.skills-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Skill Card Styles (glass-like) */
+.skill-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out, box-shadow 0.3s ease;
+}
+/* Visible state for fade-in on scroll */
+.skill-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skill Icon */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #00ffff; /* neon accent color */
+}
+/* Skill Title */
+.skill-card h3 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+/* Skill Description */
+.skill-card p {
+  color: #dddddd;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Hover Effects on Card */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.60);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-section h2 {
+    font-size: 2rem;
+  }
+  .skills-grid {
+    gap: 15px;
+  }
+}
